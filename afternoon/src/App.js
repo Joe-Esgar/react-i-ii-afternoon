@@ -13,10 +13,10 @@ class App extends Component {
     };
     this.nextHandler = this.nextHandler.bind(this);
     this.prevHandler = this.prevHandler.bind(this);
+    this.deleteHandler = this.deleteHandler.bind(this);
   }
 
   nextHandler() {
-    console.log("test");
     if (this.state.index === 24) {
       return;
     }
@@ -36,6 +36,15 @@ class App extends Component {
     });
   }
 
+  deleteHandler() {
+    console.log();
+    this.setState({
+      data: data.splice([this.state.index], 1)
+    });
+  }
+
+  newHandler() {}
+
   render() {
     console.log(this.state);
     return (
@@ -47,10 +56,14 @@ class App extends Component {
         </div>
         <div className="bottom">
           <div className="cont">
-            <InfoContainer data={this.state.data} index={this.state.index} />{" "}
-          </div>{" "}
+            <InfoContainer data={this.state.data} index={this.state.index} />
+          </div>
           <div className="nav">
-            <NavBar next={this.nextHandler} prev={this.prevHandler} />
+            <NavBar
+              next={this.nextHandler}
+              prev={this.prevHandler}
+              delete={this.delete}
+            />
           </div>
         </div>
       </div>

@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 
 class InfoContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return (
       <div className="infoContainer">
@@ -13,15 +8,13 @@ class InfoContainer extends Component {
         <div className="work">
           <div className="counter">{this.props.index}/24</div>
           <h2>
-            From: {this.props.data.name.first + " " + this.props.data.name.last}
+            Name: {this.props.data.name.first + " " + this.props.data.name.last}
           </h2>
 
+          <h3>From: {this.props.data.city + ", " + this.props.data.country}</h3>
+          <h3>Title: {this.props.data.title}</h3>
           <h3>
-            Job Title: {this.props.data.city + ", " + this.props.data.country}
-          </h3>
-          <h3>Employer: {this.props.data.title}</h3>
-          <h3>
-            Favorite Movies:{" "}
+            Favorite Movies:
             <ol>
               <li>{this.props.data.favoriteMovies[0]}</li>
               <li>{this.props.data.favoriteMovies[1]}</li>
