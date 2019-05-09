@@ -9,8 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       data: data[0],
-      index: 0,
-      counter: 0
+      index: 0
     };
     this.nextHandler = this.nextHandler.bind(this);
     this.prevHandler = this.prevHandler.bind(this);
@@ -23,8 +22,7 @@ class App extends Component {
     }
     this.setState({
       data: data[this.state.index],
-      index: this.state.index + 1,
-      counter: +1
+      index: this.state.index + 1
     });
   }
 
@@ -34,8 +32,7 @@ class App extends Component {
     }
     this.setState({
       data: data[this.state.index],
-      index: this.state.index - 1,
-      counter: -1
+      index: this.state.index - 1
     });
   }
 
@@ -50,7 +47,7 @@ class App extends Component {
         </div>
         <div className="bottom">
           <div className="cont">
-            <InfoContainer data={this.state.data} />{" "}
+            <InfoContainer data={this.state.data} index={this.state.index} />{" "}
           </div>{" "}
           <div className="nav">
             <NavBar next={this.nextHandler} prev={this.prevHandler} />

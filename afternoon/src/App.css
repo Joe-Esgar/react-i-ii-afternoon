@@ -52,3 +52,9 @@ h2 {
 .work {
   margin-left: 30px;
 }
+
+.counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

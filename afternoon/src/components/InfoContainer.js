@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Count from "./Count";
 
 class InfoContainer extends Component {
   constructor(props) {
@@ -10,10 +9,9 @@ class InfoContainer extends Component {
   render() {
     return (
       <div className="infoContainer">
-        <div className="subHeader">
-          <Count />
-        </div>
+        <div className="subHeader" />
         <div className="work">
+          <div className="counter">{this.props.index}/24</div>
           <h2>
             From: {this.props.data.name.first + " " + this.props.data.name.last}
           </h2>
